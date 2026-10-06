@@ -1,13 +1,7 @@
-# ==========================================
-# Core Dependencies
-# ==========================================
-mediapipe>=0.10.0
+# Constrain MediaPipe to 0.10.x series for Python 3.14 wheel support + mp.solutions
+mediapipe>=0.10.30,<1.0.0
 
-# ==========================================
-# Platform-Aware OpenCV Routing
-# ==========================================
-# Windows/macOS: Install standard OpenCV with GUI support
+# Platform-Aware OpenCV
 opencv-python>=4.8.0; sys_platform == 'win32' or sys_platform == 'darwin'
-
-# Linux: Install headless OpenCV to prevent CI/Docker/WSL crashes
 opencv-python-headless>=4.8.0; sys_platform == 'linux'
+
