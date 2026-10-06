@@ -2,15 +2,12 @@
 # Core Dependencies
 # ==========================================
 mediapipe>=0.10.0
-numpy>=1.21.0,<2.0.0  # Prevents breaking changes from numpy 2.x
 
 # ==========================================
 # Platform-Aware OpenCV Routing
 # ==========================================
-# Windows/macOS: Install standard OpenCV with GUI support for local dev
+# Windows/macOS: Install standard OpenCV with GUI support
 opencv-python>=4.8.0; sys_platform == 'win32' or sys_platform == 'darwin'
 
-# Linux: Install headless OpenCV to prevent CI/Docker/WSL crashes from missing X11/libGL 
-# NOTE: If you are developing locally on a Linux Desktop and need cv2.imshow(), 
-# change this to 'opencv-python' or add an override in a requirements-dev.txt
+# Linux: Install headless OpenCV to prevent CI/Docker/WSL crashes
 opencv-python-headless>=4.8.0; sys_platform == 'linux'
